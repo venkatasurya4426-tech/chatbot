@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Chatbot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- 💬 Chat Icon -->
+<div class="chat-icon" onclick="toggleChat()">💬</div>
+
+<!-- 🧠 Chatbox -->
+<div id="chat-container" class="chat-container hidden">
+
+    <div class="chat-header">
+        🎓 College Chatbot
+        <span class="close-btn" onclick="toggleChat()">✖</span>
+    </div>
+
+    <div id="chat-box" class="chat-box">
+
+        <div class="bot-msg">
+            Hello! 👋 Ask me anything or choose below:
+        </div>
+
+        <div class="quick-buttons">
+            <button onclick="sendMsg('fee structure')">💰 Fees</button>
+            <button onclick="sendMsg('courses')">📚 Courses</button>
+            <button onclick="sendMsg('admission')">📝 Admission</button>
+            <button onclick="sendMsg('hostel')">🏠 Hostel</button>
+            <button onclick="sendMsg('placement')">💼 Placement</button>
+        </div>
+
+    </div>
+
+    <div class="input-area">
+        <input type="text" id="user-input" placeholder="Ask something..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendUserInput()">Send</button>
+    </div>
+
+</div>
+
+<script>
+
+function toggleChat() {
+    document.getElementById("chat-container").classList.toggle("hidden");
+}
+
+function handleKeyPress(e) {
+    if (e.key === "Enter") sendUserInput();
+}
+
+function sendUserInput() {
+    let input = document.getElementById("user-input").value;
+    if (!input.trim()) return;
+
+    appendUser(input);
+    getBotResponse(input);
+
+    document.getElementById("user-input").value = "";
+}
+
+function sendMsg(msg) {
+    appendUser(msg);
+    getBotResponse(msg);
+}
+
+function appendUser(msg) {
+    let box = document.getElementById("chat-box");
+    box.innerHTML += `<div class="user-msg">${msg}</div>`;
+    box.scrollTop = box.scrollHeight;
+}
+
+function appendBot(msg) {
+    let box = document.getElementById("chat-box");
+    box.innerHTML += `<div class="bot-msg">${msg}</div>`;
+    box.scrollTop = box.scrollHeight;
+}
+
+function getBotResponse(msg) {
+    fetch("/get", {
+        method: "POST",
+        headers: {"Content-Type": "application/x-www-form-urlencoded"},
+        body: "msg=" + msg
+    })
+    .then(res => res.json())
+    .then(data => appendBot(data.response));
+}
+
+</script>
+
+</body>
+</html>
