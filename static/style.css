@@ -12,7 +12,7 @@ body {
 .chat-popup {
     position: fixed;
     bottom: 90px; /* gap from icon */
-    right: 20px;
+    right: 80px;
     background: #007bff;
     color: white;
     padding: 10px 14px;
@@ -21,7 +21,7 @@ body {
     z-index: 1000;
 }
 
-/* Arrow pointing to icon */
+/* Arrow */
 .chat-popup::after {
     content: "";
     position: absolute;
@@ -43,7 +43,7 @@ body {
 .chat-icon {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 80px;
     background: #007bff;
     color: white;
     padding: 15px;
@@ -58,12 +58,15 @@ body {
 .chat-container {
     position: fixed;
     bottom: 80px;
-    right: 20px;
+    right: 80px;
     width: 350px;
+
     backdrop-filter: blur(10px);
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.95);
+
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
     overflow: hidden;
     z-index: 1000;
 }
@@ -149,4 +152,29 @@ button {
     border-radius: 15px;
     cursor: pointer;
     font-size: 12px;
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+
+    .chat-container {
+        width: 90%;
+        right: 5%;
+        bottom: 70px;
+    }
+
+    .chat-popup {
+        right: 5%;
+        bottom: 110px;
+        font-size: 12px;
+    }
+
+    .chat-icon {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .chat-box {
+        height: 250px;
+    }
 }
