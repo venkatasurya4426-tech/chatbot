@@ -154,3 +154,27 @@ button {
     font-size: 12px;
 }
 
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+
+    .chat-container {
+        width: 90%;
+        right: 5%;
+        bottom: 70px;
+    }
+
+    .chat-popup {
+        right: 5%;
+        bottom: 110px;
+        font-size: 12px;
+    }
+
+    .chat-icon {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .chat-box {
+        height: 250px;
+    }
+}

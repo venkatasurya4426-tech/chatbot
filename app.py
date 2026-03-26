@@ -14,9 +14,9 @@ def get_bot_response(user_input):
     # Remove punctuation
     user_input = re.sub(r'[^\w\s]', '', user_input)
 
-    # INTENTS (keywords)
+    # 🔥 MAIN INTENTS (HIGH PRIORITY)
     keywords = {
-        "fee": ["fee", "fees", "payment", "pay fee", "fee details"],
+        "fee": ["fee", "fees", "payment", "fee structure"],
         "courses": ["course", "courses", "branches", "subjects"],
         "admission": ["admission", "apply", "join", "enroll"],
         "hostel": ["hostel", "accommodation", "stay"],
@@ -30,17 +30,24 @@ def get_bot_response(user_input):
         "wifi": ["wifi", "internet"],
         "internship": ["internship", "training"],
 
-        # 🔥 IMPORTANT (YOUR ISSUE FIX)
         "contact": ["contact", "phone", "email", "call", "reach"],
         "address": ["address", "location", "where", "place"]
     }
 
-    # Match keywords
+    # ✅ First check important queries
     for intent, words in keywords.items():
         for word in words:
             if word in user_input:
                 return data.get(intent, "Information not available.")
 
+    # 🔥 GREETINGS (LOW PRIORITY)
+    greetings = ["hi", "hello", "hey", "good morning", "good evening"]
+
+    for g in greetings:
+        if g in user_input:
+            return data.get("greeting", "Hello! 👋 How can I help you?")
+
+    # Default reply
     return "Sorry, I didn't understand. Try asking about fees, courses, admission, hostel, or contact details."
 
 # Routes
@@ -50,11 +57,11 @@ def home():
 
 @app.route("/get", methods=["POST"])
 def chatbot_response():
-    user_msg = request.form["msg"]
+    user_msg = request.form.get("msg")
     response = get_bot_response(user_msg)
     return jsonify({"response": response})
 
-# Run
+# Run server (works for local + deployment)
 import os
 
 if __name__ == "__main__":
