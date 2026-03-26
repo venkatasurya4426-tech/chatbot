@@ -1,30 +1,19 @@
 {
-  "hi": "Hello! 👋 Welcome to the College Enquiry Chatbot. How can I help you today?",
-  "hello": "Hi there! 😊 How can I assist you?",
-  "how are you": "I'm just a chatbot, but I'm working perfectly to help you! 😄",
-  "who are you": "I am a College Enquiry Chatbot designed to assist students with information.",
-  "help": "I can help you with fees, courses, syllabus, admissions, and more.",
+  "fee": "The fee structure is: CSE - 50,000/year, ECE - 45,000/year.",
+  "courses": "We offer courses like CSE, ECE, MECH, CIVIL.",
+  "admission": "You can apply online through the college website.",
+  "hostel": "Hostel facilities are available for both boys and girls.",
+  "placement": "We have around 90% placement with top companies.",
+  "syllabus": "Syllabus and PDFs are available in the student portal.",
 
-  "pay fee": "You can pay fees through the student portal using net banking, UPI, or card payment.",
-  "fee structure": "CSE: 50,000/year, ECE: 45,000/year, MECH: 40,000/year.",
-  "fees": "The fee depends on the course. Example: CSE - 50,000/year.",
-  
-  "access courses": "You can access courses through the college LMS portal using your student login.",
-  "courses": "We offer courses like CSE, ECE, MECH, CIVIL, and more.",
-  
-  "pdf": "Subject PDFs and syllabus are available in the Resources section.",
-  "syllabus": "Syllabus can be downloaded from the student portal.",
-  
-  "hostel": "Hostel facilities are available for both boys and girls with good amenities.",
-  
-  "placement": "We have around 90% placement with top companies visiting the campus.",
-  
-  "admission": "You can apply online through the official college website.",
-  "apply": "Visit the college website and fill out the admission form online.",
-  
-  "thank you": "You're welcome! 😊 Feel free to ask anything else.",
-  "thanks": "Happy to help! 👍",
-  
-  "bye": "Goodbye! 👋 Have a great day!",
-  "goodbye": "See you soon! 😊"
+  "events": "Our college conducts technical fests, cultural events, and workshops regularly.",
+  "sports": "We provide facilities for cricket, football, basketball, and indoor games.",
+  "clubs": "Students can join coding clubs, cultural clubs, and technical societies.",
+  "facilities": "The campus includes modern labs, library, auditorium, and smart classrooms.",
+  "wifi": "Free Wi-Fi is available across the campus.",
+  "internship": "We provide internship and industrial training opportunities.",
+
+  "contact": "📞 Admissions Help: +91 70950 76664\n📧 Email: info@adityauniversity.in\n🌐 Website: https://apply.adityauniversity.in",
+
+  "address": "📍 Address: Aditya Nagar, ADB Road, Surampalem, East Godavari - 533437, Andhra Pradesh, India."
 }

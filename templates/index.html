@@ -6,10 +6,16 @@
 </head>
 <body>
 
-<!-- 💬 Chat Icon -->
+<!-- 🔔 POPUP -->
+<div class="chat-popup" id="popup">
+    Use me! I can help you 👋
+    <span class="popup-close" onclick="closePopup()">✖</span>
+</div>
+
+<!-- 💬 CHAT ICON -->
 <div class="chat-icon" onclick="toggleChat()">💬</div>
 
-<!-- 🧠 Chatbox -->
+<!-- 🧠 CHATBOX -->
 <div id="chat-container" class="chat-container hidden">
 
     <div class="chat-header">
@@ -42,14 +48,22 @@
 
 <script>
 
+// Toggle chat
 function toggleChat() {
     document.getElementById("chat-container").classList.toggle("hidden");
 }
 
+// Close popup
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+
+// Enter key
 function handleKeyPress(e) {
     if (e.key === "Enter") sendUserInput();
 }
 
+// Send input
 function sendUserInput() {
     let input = document.getElementById("user-input").value;
     if (!input.trim()) return;
@@ -60,23 +74,27 @@ function sendUserInput() {
     document.getElementById("user-input").value = "";
 }
 
+// Quick buttons
 function sendMsg(msg) {
     appendUser(msg);
     getBotResponse(msg);
 }
 
+// Append user
 function appendUser(msg) {
     let box = document.getElementById("chat-box");
     box.innerHTML += `<div class="user-msg">${msg}</div>`;
     box.scrollTop = box.scrollHeight;
 }
 
+// Append bot
 function appendBot(msg) {
     let box = document.getElementById("chat-box");
     box.innerHTML += `<div class="bot-msg">${msg}</div>`;
     box.scrollTop = box.scrollHeight;
 }
 
+// Backend call
 function getBotResponse(msg) {
     fetch("/get", {
         method: "POST",

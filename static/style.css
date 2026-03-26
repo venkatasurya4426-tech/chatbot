@@ -1,4 +1,4 @@
-/* 🌌 Background Image with Overlay */
+/* 🌌 Background */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -8,7 +8,38 @@ body {
     background-size: cover;
 }
 
-/* 💬 Floating Chat Button */
+/* 🔔 Popup (PERMANENT) */
+.chat-popup {
+    position: fixed;
+    bottom: 90px; /* gap from icon */
+    right: 20px;
+    background: #007bff;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+/* Arrow pointing to icon */
+.chat-popup::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    right: 20px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: #007bff transparent transparent transparent;
+}
+
+/* Close button */
+.popup-close {
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* 💬 Chat Icon */
 .chat-icon {
     position: fixed;
     bottom: 20px;
@@ -18,12 +49,12 @@ body {
     padding: 15px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    font-size: 22px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     z-index: 1000;
 }
 
-/* 🧠 Chat Container */
+/* 🧠 Chatbox */
 .chat-container {
     position: fixed;
     bottom: 80px;
@@ -37,12 +68,11 @@ body {
     z-index: 1000;
 }
 
-/* Hide/Show */
 .hidden {
     display: none;
 }
 
-/* 📌 Header */
+/* Header */
 .chat-header {
     background: #007bff;
     color: white;
@@ -52,22 +82,20 @@ body {
     position: relative;
 }
 
-/* ❌ Close Button */
 .close-btn {
     position: absolute;
     right: 10px;
-    top: 5px;
     cursor: pointer;
 }
 
-/* 💬 Chat Messages Area */
+/* Chat box */
 .chat-box {
     height: 300px;
     overflow-y: auto;
     padding: 10px;
 }
 
-/* 🤖 Bot Message */
+/* Messages */
 .bot-msg {
     background: #e4e6eb;
     padding: 10px;
@@ -76,7 +104,6 @@ body {
     max-width: 75%;
 }
 
-/* 👤 User Message */
 .user-msg {
     background: #007bff;
     color: white;
@@ -87,13 +114,12 @@ body {
     max-width: 75%;
 }
 
-/* ⌨️ Input Area */
+/* Input */
 .input-area {
     display: flex;
     border-top: 1px solid #ccc;
 }
 
-/* Input Box */
 input {
     flex: 1;
     padding: 10px;
@@ -101,7 +127,6 @@ input {
     outline: none;
 }
 
-/* Send Button */
 button {
     background: #007bff;
     color: white;
@@ -110,7 +135,7 @@ button {
     cursor: pointer;
 }
 
-/* ⚡ Quick Buttons */
+/* Quick buttons */
 .quick-buttons {
     padding: 10px;
 }
